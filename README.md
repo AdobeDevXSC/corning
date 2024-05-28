@@ -1,9 +1,12 @@
-# Door Opener Project Boilerplate 
+## Corning - Optical Communications Edge Delivery Document-Based Authoring Demo
+Mockup of Corning - Optical Communications landing page to showcase how efficient development in Edge Delivery Services is.
 
+Corning Landing Page:
+https://www.corning.com/optical-communications/worldwide/en/home.html
 
 ## Environments
-- Preview: Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--corning--AdobeDevXSC.hlx.page/
+- Live: https://main--corning--AdobeDevXSC.hlx.live/
 
 ## Installation
 
