@@ -12,17 +12,25 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
+  --corning-blue: #005293;
+  --secondary-corning-blue: #7696bb;
+
+  --link-color: var(--corning-blue);
   --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
-  --dark-color: #ccc;
-  --text-color: black;
+  --light-color: #ffffff;
+  --text-color: #1e1e1e;
+  --secondary-text-color: #999;
+  --footer-text-color: #333;
+
+  --linked-in: #4c86b3;
+  /* --youtube: ; */
+  /* --x: ; */
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --body-font-family: the-sans;
+  --heading-font-family: the-sans-bold;
+  --alt-font-family: arial;
+  /* --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace; */
 
   /* body sizes */
   --body-font-size-m: 22px;
