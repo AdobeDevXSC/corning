@@ -127,20 +127,46 @@ export default async function decorate(block) {
     container.append(slideNavButtons);
   }
 
-  rows.forEach((row, idx) => {
-    const slide = createSlide(row, idx, carouselId);
-    slidesWrapper.append(slide);
+// function to fetch JSON for slides from service
+  async function fetchJson(link) {
+	const response = await fetch(link?.href);
+	if (response.ok) {
+	  const jsonData = await response.json();
+	  const data = jsonData?.data;
+	return data;
+	}
+	return 'an error occurred';
+  }
 
-    if (slideIndicators) {
-      const indicator = document.createElement('li');
-      indicator.classList.add('carousel-slide-indicator');
-      indicator.dataset.targetSlide = idx;
-      indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
-      slideIndicators.append(indicator);
-    }
-    row.remove();
-  });
+  const isJSONSlides = block.classList.contains('cards');
+  if(isJSONSlides){
+	console.log('build from JSON')
+	const link = block.querySelector('a');
+	console.log(link)
+	  const cardData = await fetchJson(link);
+	  cardData.forEach((card) => {
+		const picture = createOptimizedPicture(card.image, card.title, false, [{ width: 320 }]);
+		picture.lastElementChild.width = '320';
+		picture.lastElementChild.height = '180';
+		const createdSlide = document.createElement('li');
 
+		slidesWrapper.append(createdSlide);
+	})
+} else {
+	rows.forEach((row, idx) => {
+		const slide = createSlide(row, idx, carouselId);
+		slidesWrapper.append(slide);
+
+		if (slideIndicators) {
+		const indicator = document.createElement('li');
+		indicator.classList.add('carousel-slide-indicator');
+		indicator.dataset.targetSlide = idx;
+		indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
+		slideIndicators.append(indicator);
+		}
+		row.remove();
+	});
+  }
   container.append(slidesWrapper);
   block.prepend(container);
 

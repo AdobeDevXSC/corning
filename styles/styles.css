@@ -13,8 +13,6 @@
 :root {
   /* colors */
   --corning-blue: #005293;
-  --secondary-corning-blue: #7696bb;
-
   --link-color: var(--corning-blue);
   --link-hover-color: #4c86b3;
   --light-color: #ffffff;
@@ -46,7 +44,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 120px;
 }
 
 @font-face {
@@ -88,7 +86,9 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-style: bold;
+  font-weight: 700;
+  color: var(--text-color);
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
@@ -141,40 +141,13 @@ a:hover {
 
 /* buttons */
 a.button:any-link, button {
-  font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 30px;
-}
-
-a.button:hover, a.button:focus, button:hover, button:focus  {
-  background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
-}
-
-a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
-}
 
 main img {
   max-width: 100%;

@@ -9,11 +9,13 @@
 
 .cards > ul > li {
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
+  border: 1px inset rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+	padding: 26px 12px 50px 12px;
 }
 
 .cards .cards-card-image {
@@ -28,4 +30,17 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+
+.cards .cards-card-body h5 {
+	line-height: 1.2;
+	font-size: 21px;
+}
+
+.cards .cards-card-body p {
+	line-height: 1.5;
+	font-size: 15px;
+	font-family: Arial;
+	overflow: visible;
 }
