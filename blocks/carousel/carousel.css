@@ -106,6 +106,8 @@ main .section.hero-carousel .carousel .carousel-slide-indicators {
 }
 
   
+
+
 /* carousel styles - cards */
 /* carousel section heading */
 main .section.cards-carousel .default-content-wrapper h2 {
@@ -121,7 +123,7 @@ main .section.cards-carousel .default-content-wrapper h2 {
     font-weight: normal;
 }
 
-.section.cards-carousel {
+/* .section.cards-carousel {
 	padding: 0;
 }
 
@@ -135,7 +137,7 @@ main .section.cards-carousel .default-content-wrapper h2 {
 	padding-left: 8%;
 	align-items: center;
 	position: relative;
-}
+} */
 
 /* carousel styles from boilerplate*/
 .carousel .carousel-slides-container {
