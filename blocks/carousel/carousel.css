@@ -262,15 +262,14 @@
 
 /* carousel section heading */
 main .section.cards-carousel .default-content-wrapper h2 {
-	border: solid 2px orange;
 	font-style: italic;
 	margin: 0;
     padding: 0;
-    font-family: theSansItalic, sans-serif !important;
-    font-size: 33px !important;
+    font-family: var(--heading-font-family);
+    font-size: 33px;
     letter-spacing: -0.3px;
     line-height: 1.2;
-    text-align: center !important;
-    color: #1e1e1e !important;
-    font-weight: normal !important;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: normal;
 }
