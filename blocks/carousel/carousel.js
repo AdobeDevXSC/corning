@@ -139,6 +139,8 @@ export default async function decorate(block) {
     container.append(slideNavButtons);
   }
 
+  const isImageCards = block.classList.contains('image-cards');
+
   if(isJSONCarousel){  
 	const link = block.querySelector('a');
   	const cardData = await fetchJson(link);
@@ -151,7 +153,18 @@ export default async function decorate(block) {
 		createdSlide.dataset.slideIndex = idx;
 		createdSlide.setAttribute('id', `carousel-${carouselId}-slide-${idx}`);
 		createdSlide.classList.add('carousel-slide');
-
+		if(isImageCards){
+			createdSlide.innerHTML = `
+				<div class="cards-card-image">
+					${picture.outerHTML}
+				</div>
+				<a href="${card.url}" aria-label="${card['anchor-text']}" title="${card['anchor-text']}">
+					<div class="cards-card-body">
+						<h5>${card.title}</h5>
+						<p>${card.copy}</p>
+					</div>
+				</a>`
+		} else {
 		createdSlide.innerHTML = `
         <div class="cards-card-image">
           ${picture.outerHTML}
@@ -168,7 +181,7 @@ export default async function decorate(block) {
             </a>
           </p>
         </div>
-      `;
+      `;}
 
 		const labeledBy = createdSlide.querySelector('h1, h2, h3, h4, h5, h6');
 		if (labeledBy) {

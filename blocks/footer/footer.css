@@ -72,6 +72,10 @@ footer .footer h3 > a {
 	margin: 0;
 }
 
+footer .footer h3 {
+	margin-bottom: 10px;
+}
+
 footer .footer .footer-columns > div > ul {
 	width: 25%;
 }

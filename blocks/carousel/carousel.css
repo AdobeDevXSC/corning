@@ -72,9 +72,10 @@ main .section.hero-carousel .carousel #carousel-1-slide-3::before {
 
 
 
-/* hero & card carousel navigation buttons */
+/* navigation buttons */
 main .section.hero-carousel .carousel .carousel-navigation-buttons,
-main .section.cards-carousel .carousel .carousel-navigation-buttons {
+main .section.cards-carousel .carousel .carousel-navigation-buttons,
+main .section.image-cards-carousel .carousel .carousel-navigation-buttons {
 	opacity: 0;
 	position: absolute;
 	top: 50%;
@@ -84,17 +85,18 @@ main .section.cards-carousel .carousel .carousel-navigation-buttons {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	z-index: 1;
 	transition: opacity 500ms ease 0s;
 }
 
 main .section.hero-carousel:hover .carousel .carousel-navigation-buttons,
-main .section.cards-carousel:hover .carousel .carousel-navigation-buttons {
+main .section.cards-carousel:hover .carousel .carousel-navigation-buttons,
+main .section.image-cards-carousel:hover .carousel .carousel-navigation-buttons {
 	opacity: 1;
 }
 
 main .section.hero-carousel .carousel .carousel-navigation-buttons button,
-main .section.cards-carousel .carousel .carousel-navigation-buttons button {
+main .section.cards-carousel .carousel .carousel-navigation-buttons button,
+main .section.image-cards-carousel .carousel .carousel-navigation-buttons button {
 	margin: 0;
 	padding: 0;
 	border-radius: 0;
@@ -102,6 +104,7 @@ main .section.cards-carousel .carousel .carousel-navigation-buttons button {
     height: 80px;
     width: 50px;
 	position: relative;
+	z-index: 100;
 }
 
 main .section.hero-carousel .carousel .carousel-slide-indicators,
@@ -111,12 +114,24 @@ main .section.cards-carousel .carousel .carousel-slide-indicators {
 	gap: 10px;
 }
 
+/* reset slide height & flex for card carousels */
+.section.cards-carousel .carousel .carousel-slide,
+.section.image-cards-carousel .carousel .carousel-slide {
+	min-height: unset;
+	flex: unset;
+}
 
+/* hide service & block */
+main .section.cards-carousel .carousel > div:last-of-type,
+main .section.image-cards-carousel .carousel > div:last-of-type {
+	display: none;
+	visibility: hidden;
+}
 
 /* carousel styles - cards specific */
 /* carousel section heading */
 main .section.cards-carousel .default-content-wrapper h2 {
-	margin: 0;
+	margin: 0 0 60px 0;
     padding: 0;
     font-family: the-sans;
 	font-style: italic;
@@ -128,21 +143,104 @@ main .section.cards-carousel .default-content-wrapper h2 {
     font-weight: normal;
 }
 
-/* .section.cards-carousel {
-	padding: 0;
+main .section.cards-carousel .carousel-wrapper {
+	max-width: 970px;
 }
 
-.section.cards-carousel .carousel-wrapper {
-	max-width: 100%;
+
+/* carousel styles - image cards carousel */
+/* specific nav button placement image cards*/
+main .section.image-cards-carousel .carousel .carousel-navigation-buttons .slide-prev {
+	left: -50px;
+	transition: all 300ms;
+}
+
+main .section.image-cards-carousel .carousel .carousel-navigation-buttons .slide-next {
+	right: -50px;
+	transition: all 300ms;
+}
+
+main .section.image-cards-carousel:hover .carousel .carousel-navigation-buttons .slide-prev {
+	transform: translateX(50px);
+}
+
+main .section.image-cards-carousel:hover .carousel .carousel-navigation-buttons .slide-next {
+	transform: translateX(-50px);
+}
+
+main .section.image-cards-carousel .carousel .carousel-slide-indicators {
+	display: none;
+	visibility: hidden;
+}
+
+main .section.image-cards-carousel {
+	padding: 28px 0;
+}
+
+main .section.image-cards-carousel .carousel-wrapper {
+	max-width: unset;
 	overflow-x: hidden;
 }
 
-.section.cards-carousel.carousel-container .carousel {
-	display: flex;
-	padding-left: 8%;
-	align-items: center;
+.section.image-cards-carousel .carousel ul {
 	position: relative;
+	width: 125%;
+}
+
+.section.image-cards-carousel .carousel li.carousel-slide {
+	position: relative;
+	transition: all 300ms ease;
+	overflow: hidden;
+	min-width: 296px;
+	height: auto;
+	width: 25%;
+}
+
+.section.image-cards-carousel .carousel .carousel-slide .cards-card-image {
+	min-width: 296px;
+	width: 100%;
+	height: 100%;
+	transition: all 300ms ease;
+}
+
+.section.image-cards-carousel .carousel .carousel-slide .cards-card-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.section.image-cards-carousel .carousel .carousel-slide:hover .cards-card-image {
+	transform: scale(1.2);
+}
+
+.section.image-cards-carousel .carousel .carousel-slide a {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display:flex;
+	align-items: flex-end;
+	background: transparent;
+}
+
+.section.image-cards-carousel .carousel .carousel-slide a:hover {
+	text-decoration: none;
+}
+
+/* .section.image-cards-carousel .carousel .carousel-slide a .cards-card-body {
+	pointer-events: none;
 } */
+
+.section.image-cards-carousel .carousel .carousel-slide a .cards-card-body h5 {
+	color: var(--light-color);
+}
+
+.section.image-cards-carousel .carousel .carousel-slide a .cards-card-body p {
+	color: var(--light-color);
+}
+
+
+
 
 /* carousel styles from boilerplate*/
 .carousel .carousel-slides-container {
