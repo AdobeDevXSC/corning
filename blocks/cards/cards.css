@@ -44,3 +44,83 @@
 	font-family: Arial;
 	overflow: visible;
 }
+
+
+/* styles: single card */
+main .section.no-spacing {
+	padding: 0 32px;
+}
+
+.cards.single-card {
+	max-width: 970px;
+	margin: 0 auto;
+}
+
+.cards.single-card > ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+    height: 100%;
+	display: block;
+    box-shadow: 0 0 0 1px #ddd, 0 2px 4px #eee;
+  }
+
+  .cards.single-card > ul > a {
+	display: block;
+	width: 100%;
+	height: auto;
+  }
+
+  .cards.single-card > ul > a:hover {
+	text-decoration: none;
+  }
+
+  .cards.single-card a:hover li {
+	background: #f9f9f9;
+	transition: background 200ms, color 200ms, opacity 200ms;
+	box-shadow: 0 0 0 1px #ddd, 0 1px 10px #ccc;
+  }
+  
+  .cards.single-card > ul > a > li {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+  }
+    
+  .cards.single-card .cards-card-image {
+	min-width: 282px;
+	max-width: 282px;
+	height: 100%;
+  }
+
+  .cards.single-card .cards-card-image picture {
+	box-sizing: border-box;
+  }
+    
+  .cards.single-card .cards-card-image picture img {
+	max-width: 282px;
+	height: auto;
+	object-fit: cover;
+	display: block;
+  }
+  
+  .cards.single-card .cards-card-body {
+	padding: 10px 20px !important;
+  }
+
+  .cards.single-card .cards-card-body h3 {
+	  line-height: 1.2;
+	  font-size: 21px;
+	  color: var(--corning-blue);
+  }
+  
+  .cards.single-card .cards-card-body > p {
+	color: var(--text-color);
+  }
+
+  .cards.single-card .cards-hide-markdown {
+	display: none;
+	visibility: hidden;
+  }

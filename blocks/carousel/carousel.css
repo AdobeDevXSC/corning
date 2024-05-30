@@ -70,8 +70,11 @@ main .section.hero-carousel .carousel #carousel-1-slide-3::before {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0, transparent 100%);
 }
 
-/* hero carousel navigation buttons */
-main .section.hero-carousel .carousel .carousel-navigation-buttons {
+
+
+/* hero & card carousel navigation buttons */
+main .section.hero-carousel .carousel .carousel-navigation-buttons,
+main .section.cards-carousel .carousel .carousel-navigation-buttons {
 	opacity: 0;
 	position: absolute;
 	top: 50%;
@@ -85,11 +88,13 @@ main .section.hero-carousel .carousel .carousel-navigation-buttons {
 	transition: opacity 500ms ease 0s;
 }
 
-main .section.hero-carousel:hover .carousel .carousel-navigation-buttons {
+main .section.hero-carousel:hover .carousel .carousel-navigation-buttons,
+main .section.cards-carousel:hover .carousel .carousel-navigation-buttons {
 	opacity: 1;
 }
 
-main .section.hero-carousel .carousel .carousel-navigation-buttons button {
+main .section.hero-carousel .carousel .carousel-navigation-buttons button,
+main .section.cards-carousel .carousel .carousel-navigation-buttons button {
 	margin: 0;
 	padding: 0;
 	border-radius: 0;
@@ -99,16 +104,16 @@ main .section.hero-carousel .carousel .carousel-navigation-buttons button {
 	position: relative;
 }
 
-main .section.hero-carousel .carousel .carousel-slide-indicators {
+main .section.hero-carousel .carousel .carousel-slide-indicators,
+main .section.cards-carousel .carousel .carousel-slide-indicators {
 	height: 45px;
 	align-items: end;
 	gap: 10px;
 }
 
-  
 
 
-/* carousel styles - cards */
+/* carousel styles - cards specific */
 /* carousel section heading */
 main .section.cards-carousel .default-content-wrapper h2 {
 	margin: 0;

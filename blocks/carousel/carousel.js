@@ -107,8 +107,7 @@ export default async function decorate(block) {
 
   block.setAttribute('id', `carousel-${carouselId}`);
   const rows = block.querySelectorAll(':scope > div');
-  const isSingleSlide = !isJSONCarousel && rows.length < 2;
-	console.log('isSingleSlide', isSingleSlide)
+  const isSingleSlide = isJSONCarousel.length < 2 && rows.length < 2;
   const placeholders = await fetchPlaceholders();
 
   block.setAttribute('role', 'region');
@@ -144,8 +143,6 @@ export default async function decorate(block) {
 	const link = block.querySelector('a');
   	const cardData = await fetchJson(link);
 	cardData.forEach((card, idx) => {
-		console.log('json card', card)
-
 		const picture = createOptimizedPicture(card.image, card.title, false, [{ width: 320 }]);
 		picture.lastElementChild.width = '320';
 		picture.lastElementChild.height = '180';
