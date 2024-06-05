@@ -104,7 +104,6 @@ main .section.image-cards-carousel .carousel .carousel-navigation-buttons button
     height: 80px;
     width: 50px;
 	position: relative;
-	z-index: 100;
 }
 
 main .section.hero-carousel .carousel .carousel-slide-indicators,

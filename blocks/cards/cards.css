@@ -131,3 +131,17 @@ main .section.no-spacing {
 	display: none;
 	visibility: hidden;
   }
+
+/* cards full-width */
+main .section.full-width.cards-container {
+	padding: 48px 16px;
+}
+
+main .section.full-width.cards-container .cards-wrapper {
+	max-width: unset;
+}
+
+.cards > ul {
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+}

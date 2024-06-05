@@ -30,7 +30,8 @@ function updateActiveSlide(slide) {
 
 function showSlide(block, slideIndex = 0) {
   const slides = block.querySelectorAll('.carousel-slide');
-  let realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
+  let realSlideIndex = slideIndex < 0 ? (slides.length - 1) : slideIndex;
+  console.log('slide indexes', realSlideIndex, slideIndex, slides.length);
   if (slideIndex >= slides.length) realSlideIndex = 0;
   const activeSlide = slides[realSlideIndex];
 
@@ -61,11 +62,11 @@ function bindEvents(block) {
   });
 
   const slideObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+	entries.forEach((entry) => {
       if (entry.isIntersecting) updateActiveSlide(entry.target);
     });
-  }, { threshold: 0.5 });
-  block.querySelectorAll('.carousel-slide').forEach((slide) => {
+    }, { threshold: 0.5 });
+    block.querySelectorAll('.carousel-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
   
