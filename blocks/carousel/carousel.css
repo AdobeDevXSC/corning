@@ -120,7 +120,7 @@ main .section.cards-carousel .carousel .carousel-slide-indicators {
 	flex: unset;
 }
 
-/* hide service & block */
+/* hide service & link block */
 main .section.cards-carousel .carousel > div:last-of-type,
 main .section.image-cards-carousel .carousel > div:last-of-type {
 	display: none;
@@ -209,15 +209,24 @@ main .section.cards-carousel .carousel-wrapper {
 
 @media (width <= 992px) {
 	.section.cards-carousel.carousel-container .carousel .carousel-slide {
-		flex: 0 0 50%;
+		flex: 0 0 45%;
 	}
 }
 
 @media (width <= 767px) {
-	.section.cards-carousel.carousel-container .carousel .carousel-slide {
-		flex: 0 0 70%;
+	main .section.cards-carousel .carousel .carousel-navigation-buttons {
+		max-width: 93vw;
 	}
+
+	.section.cards-carousel.carousel-container .carousel .carousel-slide {
+		flex: 0 0 60%;
+	}
+
+	.section.cards-carousel.carousel-container .carousel .carousel-slide .cards-card-body p:first-of-type {
+		-webkit-line-clamp: 3;
+	  }
 }
+
 
 /* carousel styles - image cards carousel */
 /* specific nav button placement image cards*/
