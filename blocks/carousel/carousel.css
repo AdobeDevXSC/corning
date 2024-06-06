@@ -144,8 +144,80 @@ main .section.cards-carousel .default-content-wrapper h2 {
 
 main .section.cards-carousel .carousel-wrapper {
 	max-width: 970px;
+	overflow-x: hidden;
 }
 
+.section.cards-carousel.carousel-container .carousel {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 0 0 75px 0;
+}
+
+.section.cards-carousel.carousel-container .carousel nav {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.section.cards-carousel.carousel-container .carousel .carousel-slides {
+	display: flex;
+	gap: 30px;
+	overflow: auto;
+	scroll-snap-type: x mandatory;
+  }
+
+.section.cards-carousel.carousel-container .carousel .carousel-slide {
+	flex: 0 0 37.33%;
+	scroll-snap-align: start;
+	visibility: visible;
+	width: 100%;
+	justify-content: flex-start;
+	border: 1px inset rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+.section.cards-carousel.carousel-container .carousel .carousel-slide .cards-card-image {
+	min-height: 250px;
+	max-height: 250px;
+	height: 100%;
+	width: 100%;
+}
+
+.section.cards-carousel.carousel-container .carousel .carousel-slide .cards-card-image picture > img {
+	height: 100%;
+	width: 100%;
+  	object-fit: cover;
+	display: block;
+}
+
+  .section.cards-carousel.carousel-container .carousel .carousel-slide .cards-card-body p:first-of-type {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+
+@media (width <= 1200px) {
+	.section.cards-carousel.carousel-container .carousel .carousel-slide .cards-card-image {
+		max-height: 640px;
+		width: 100%;
+	}
+}
+
+@media (width <= 992px) {
+	.section.cards-carousel.carousel-container .carousel .carousel-slide {
+		flex: 0 0 50%;
+	}
+}
+
+@media (width <= 767px) {
+	.section.cards-carousel.carousel-container .carousel .carousel-slide {
+		flex: 0 0 70%;
+	}
+}
 
 /* carousel styles - image cards carousel */
 /* specific nav button placement image cards*/
@@ -237,8 +309,6 @@ main .section.image-cards-carousel .carousel-wrapper {
 .section.image-cards-carousel .carousel .carousel-slide a .cards-card-body p {
 	color: var(--light-color);
 }
-
-
 
 
 /* carousel styles from boilerplate*/
