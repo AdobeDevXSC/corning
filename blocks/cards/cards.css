@@ -113,6 +113,20 @@ main .section.no-spacing {
 	display: block;
   }
   
+  @media (width <= 767px) {
+	.cards.single-card .cards-card-image {
+		min-width: unset;
+		max-width: unset;
+		width: 350px;
+		overflow: hidden;
+	}
+
+	.cards.single-card .cards-card-image img {
+		max-width: unset;
+		height: 100%;
+	}
+  }
+
   .cards.single-card .cards-card-body {
 	padding: 10px 20px !important;
   }
@@ -141,7 +155,32 @@ main .section.full-width.cards-container .cards-wrapper {
 	max-width: unset;
 }
 
-.cards > ul {
+main .section.full-width.cards-container .cards > ul {
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 30px;
+}
+
+main .section.full-width.cards-container .cards > ul > li {
+	min-width: 289px;
+}
+
+@media (width <= 767px) {
+	main .section.full-width.cards-container {
+		padding-right: 0;
+	}
+	main .section.full-width.cards-container .cards {
+		overflow: hidden;
+	}
+
+	main .section.full-width.cards-container .cards > ul {
+		overflow-x: scroll;
+	}
+
+	main .section.full-width.cards-container .cards > ul > li {
+		scroll-snap-type: x mandatory;
+	}
+
+	main .section.full-width.cards-container .cards > ul > li:last-of-type {
+		margin-right: 16px;
+	}
 }
