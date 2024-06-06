@@ -19,6 +19,44 @@ header .nav-wrapper {
   header nav#nav .nav-hamburger {
 	display: none;
   }
+
+  header nav#nav .nav-hamburger button {
+	background-color: transparent;
+	height: 16px;
+	width: 20px;
+  }
+
+  header nav#nav .nav-hamburger-icon,
+  header nav#nav .nav-hamburger-icon::before,
+  header nav#nav .nav-hamburger-icon::after {
+	box-sizing: border-box;
+	display: block;
+	position: relative;
+	width: 34px;
+  }
+  
+  header nav#nav .nav-hamburger-icon::before,
+  header nav#nav .nav-hamburger-icon::after {
+	content: "";
+	position: absolute;
+	background: currentcolor;
+  }
+
+  header nav#nav[aria-expanded="false"] .nav-hamburger-icon,
+  header nav#nav[aria-expanded="false"] .nav-hamburger-icon::before,
+  header nav#nav[aria-expanded="false"] .nav-hamburger-icon::after {
+	height: 3px;
+	border-radius: 2px;
+	background: var(--light-color);
+  }
+
+  header nav#nav[aria-expanded="false"] .nav-hamburger-icon::before {
+	top: -8px;
+  }
+  
+  header nav#nav[aria-expanded="false"] .nav-hamburger-icon::after {
+	top: 8px;
+  }
   
   /* brand */
   header .nav-brand {
@@ -69,7 +107,7 @@ header .nav-wrapper {
   }
 
   header nav#nav .nav-brand > .default-content-wrapper > p:last-of-type {
-	grid-column: 8/ span 1;
+	grid-column: 7/ span 2;
 	justify-self: end;
 	font-size: .875rem;
   }
@@ -146,3 +184,61 @@ header .nav-wrapper {
 	filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(25deg) brightness(103%) contrast(101%);
   }
   
+  @media (width <= 767px){
+	header nav#nav {
+		height: 99px;
+	  }
+
+	header nav#nav .nav-hamburger {
+		display: block;
+		position: absolute;
+		left: 16px;
+		top: -4px;
+	}
+
+	header nav#nav .nav-brand > .default-content-wrapper > p:first-of-type {
+		margin: 0 auto;
+		grid-column: 4/ span 2;
+	}
+
+	header nav#nav .nav-brand > .default-content-wrapper > ul {
+		display: none;
+	}
+
+	header nav#nav .nav-brand > .default-content-wrapper > p:last-of-type {
+		visibility: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		grid-column: 7/ span 2;
+		height: 36px;
+		width: 100%;
+	}
+
+	header nav#nav .nav-brand > .default-content-wrapper > p:last-of-type .icon {
+		visibility: visible;
+		border: none;
+		height: 24px;
+		padding: 0;
+		margin: 0 16px 0 0;
+	}
+
+	header nav#nav .nav-brand > .default-content-wrapper > p:last-of-type .icon img {
+		height: 100%;
+		width: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	header nav#nav .nav-sections {
+		padding: 0 16px;
+	}
+
+	header nav#nav .nav-sections h2 {
+		font-size: 1.125rem;
+	}
+
+	header nav#nav .nav-sections li {
+		display: none;
+	}
+  }
